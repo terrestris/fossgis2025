@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="../img/geostyler/geostyler_logo.svg">
+
+  <title>GeoStyler - ArcGIS Unterstützung und weitere neue Features</title>
+
+  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/dist/theme/simple.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+  <style>
+    section {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      top: unset !important;
+      height: 100%;
+    }
+
+    .slide-content-default {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .slide-content-horizontal {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: small;
+    }
+
+    footer img {
+      margin: 0 !important;
+    }
+
+    .blurry-banner {
+      width: 100%;
+      backdrop-filter: blur(8px) grayscale(100%);
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 40px;
+    }
+
+    .gap {
+      gap: 100px;
+    }
+
+    .r-stack img {
+      max-height: 850px;
+    }
+
+    .img-shadow {
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .code-small>code {
+      overflow: hidden !important;
+    }
+
+    .reveal section a.email {
+      background-image: url("../img/mail-logo.png");
+      background-position: left 0.55em;
+    }
+
+    .reveal section a.github {
+      background-image: url("../img/github-logo.png");
+    }
+
+    .reveal section a.url {
+      background-image: url("../img/url-logo.png");
+    }
+
+    .empty-box-content {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 60vh;
+      left: 50vw;
+      max-width: 35vw;
+    }
+
+    .empty-box-content>img {
+      height: 15vh;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section id="title" data-background-image="../img/geostyler/geostyler_logo.svg" data-background-size="auto 85%">
+        <div class="fragment slide-content-default blurry-banner" style="justify-content: center; padding: 0;">
+          <h1>GeoStyler - ArcGIS Unterstützung und weitere neue Features</h1>
+          <p>
+            <small>Jan Suleiman, terrestris GmbH &amp; Co. KG</small> <br />
+            <small>Benjamin Gerber, Camptocamp</small> <br />
+          </p>
+          <small>FOSSGIS 2025, Münster</small>
+        </div>
+      </section>
+
+      <section>
+        <h2>Was ist GeoStyler?</h2>
+        <div class="slide-content-default">
+          <img src="../img/geostyler/geostyler-parsers.png" height="600px" />
+        </div>
+        <footer>
+          <img src="../img/geostyler/geostyler_logo.svg" height="30px" />
+          <span>GeoStyler - ArcGIS Unterstützung und weitere neue Features, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2>ArcGIS Unterstützung</h2>
+        <div class="slide-content-default">
+          <img src="../img/geostyler/geostyler-parsers-arcgis.png" height="600px" />
+        </div>
+        <footer>
+          <img src="../img/geostyler/geostyler_logo.svg" height="30px" />
+          <span>GeoStyler - ArcGIS Unterstützung und weitere neue Features, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2>ArcGIS Unterstützung</h2>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal" style="gap: 20px;">
+            <div style="flex: 1; font-size: smaller">
+              <ul>
+                <li>Repository: <a
+                    href="https://github.com/geostyler/geostyler-lyrx-parser">geostyler/geostyler-lyrx-parser</a></li>
+                <li>Basiert auf <a href="https://github.com/GeoCat/bridge-style">GeoCat/bridge-style</a></li>
+                <li>Features</li>
+                <ul>
+                  <li>Polygonen</li>
+                  <li>Linien</li>
+                  <li>Punkten</li>
+                  <li>Labels</li>
+                  <li>Marks</li>
+                  <li>Schraffuren</li>
+                  <li>...</li>
+                </ul>
+                <li>Limitierungen</li>
+                <ul>
+                  <li>.lyrx only</li>
+                  <li>read only</li>
+                </ul>
+              </ul>
+            </div>
+            <div style="width: 640px; display: flex; flex-direction: column; gap: 20px;">
+              <img src="../img/geostyler/arcgis-example.png" height="300px" />
+              <img src="../img/geostyler/arcgis-example-2.png" height="300px" />
+            </div>
+          </div>
+          <div>
+            <small>Dank geht an Benjamin, Wolfgang, Myriam, Thomas, Eva, Balz!</small>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/geostyler/geostyler_logo.svg" height="30px" />
+          <span>GeoStyler - ArcGIS Unterstützung und weitere neue Features, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2>Weitere Neuheiten</h2>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal" style="gap: 20px;">
+            <div style="flex: 1;">
+              <div>
+                <span>QGIS Plugin</span><br />
+                <small>Repository: <a
+                    href="https://github.com/geostyler/geostyler-qgis-plugin">geostyler/geostyler-qgis-plugin</a></small>
+              </div>
+              <div style="flex: 1;">
+                <span>Generelle Verbesserungen</span><br />
+                <small>Bessere UI, bessere Expressions, bessere Parser</small>
+              </div>
+              <div style="flex: 1;">
+                <span>Eigener Server (WIP)</span><br />
+                <small>Mehr Demos, mehr Dienste, mehr GeoStyler</small>
+              </div>
+            </div>
+            <div style="width: 640px; display: flex; flex-direction: column; gap: 20px;">
+              <img src="../img/geostyler/qgis-plugin.png" />
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/geostyler/geostyler_logo.svg" height="30px" />
+          <span>GeoStyler - ArcGIS Unterstützung und weitere neue Features, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2>GeoStyler Code Sprint 2025</h2>
+        <div class="slide-content-default" style="justify-content: center;">
+          <h4>It's all about the style</h4>
+          <small>Wann? 02. - 06.06.2025</small>
+          <small>Wo? Bussigny, Schweiz</small>
+          <img src="../img/geostyler/geostyler_logo.svg" />
+          <small>Weitere Infos auf <a href="https://geostyler.org">geostyler.org</a></small>
+        </div>
+        <footer>
+          <img src="../img/geostyler_logo.svg" height="30px" />
+          <span>GeoStyler - ArcGIS Unterstützung und weitere neue Features, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2>Noch Fragen?</h2>
+        <div class="slide-content-default" style="justify-content: center;">
+          <h4>Kommt gerne zu uns an den terrestris Stand!</h4>
+          <h4>Ansonsten schreibt uns auf</h4>
+          <h4>Github: <a href="https://github.com/geostyler/geostyler" style="color: black;">geostyler/geostyler</a></h4>
+          <h4>Discord: <a href="https://discord.gg/yrXHDpcFcB" style="color: black;">discord.gg/yrXHDpcFcB</a></h4>
+        </div>
+        <footer>
+          <img src="../img/geostyler_logo.svg" height="30px" />
+          <span>GeoStyler - ArcGIS Unterstützung und weitere neue Features, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../reveal.js/dist/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="../reveal.js/plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      width: '100%',
+      height: '100%',
+      hash: true,
+      controlsTutorial: false,
+      transition: 'fade',
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+
+</html>
