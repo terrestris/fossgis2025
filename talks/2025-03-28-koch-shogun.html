@@ -18,6 +18,11 @@
     .slides section.has-light-background h3 {
       color: #222;
     }
+
+    .image-shadow {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background: transparent;
+    }
   </style>
 </head>
 
@@ -26,9 +31,136 @@
     <div class="slides">
 
       <section>
-        <h3>Default</h3>
+        <a href="https://github.com/terrestris/shogun">
+          <img src="/img/2025-03-28-koch-shogun/shogun-logo.svg" alt="SHOGun logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+        </a>
+        <h3>State of SHOGun</h3>
+        <h5>Ein flexibles Web-GIS Framework</h5>
+        <p>
+          <small>Daniel Koch <a href="mailto:koch@terrestris.de">koch@terrestris.de</a> und <a href="https://github.com/terrestris/shogun/graphs/contributors">contributors</a></small>
+        </p>
       </section>
 
+      <section>
+        <h3>Was ist SHOGun?</h3>
+        <ul>
+          <li>WebGIS Framework</li>
+          <li>off-the-shelf vs. Individualisierung</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Kernfunktionen</h3>
+        <ul>
+          <li>skalierbare verteilte Architektur</li>
+          <li>etablierte OS Komponenten (PostGIS, GeoServer, GeoStyler)</li>
+          <li>Maßgebliche Designidee: Erweiterbarkeit</li>
+          <li>Umfangreiches Berechtigungssystem (via Keycloak)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Projektbeispiele</h3>
+      </section>
+
+      <section>
+        <figure>
+          <figcaption>Preview with default settings:</figcaption>
+          <img height="50" src="https://static.slid.es/images/alphabet/v1/a.png" data-preview-image>
+        </figure>
+      </section>
+
+      <section>
+        <img
+          src="/img/2025-03-28-koch-shogun/ikso.png"
+          alt="SHOGun logo"
+          style="height: 600px; margin: 0 auto 4rem auto;"
+          class="image-shadow"
+        >
+      </section>
+
+      <section>
+        <img
+          src="/img/2025-03-28-koch-shogun/khr.png"
+          alt="IKSO"
+          style="height: 600px; margin: 0 auto 4rem auto;"
+          class="image-shadow"
+        >
+      </section>
+
+      <section>
+        TODO screenshot Admin?
+      </section>
+
+      <section>
+        <img
+          src="/img/2025-03-28-koch-shogun/numerare.png"
+          alt="Numerare"
+          style="height: 600px; margin: 0 auto 4rem auto;"
+          class="image-shadow"
+        >
+      </section>
+
+      <section>
+        <img
+          src="/img/2025-03-28-koch-shogun/regiofreizeit.png"
+          alt="Regiofreizeit"
+          style="height: 600px; margin: 0 auto 4rem auto;"
+          class="image-shadow"
+        >
+      </section>
+
+      <section>
+        <img
+          src="/img/2025-03-28-koch-shogun/shogun-demo.png"
+          alt="SHOGun Demo"
+          style="height: 600px; margin: 0 auto 4rem auto;"
+          class="image-shadow"
+        >
+      </section>
+
+      <section>
+        <img
+          src="/img/2025-03-28-koch-shogun/shogun-edit.png"
+          alt="SHOGun Demo II"
+          style="height: 600px; margin: 0 auto 4rem auto;"
+          class="image-shadow"
+        >
+      </section>
+
+      <section>
+        <h3>Neuerungen (aus technischer Sicht)</h3>
+        <ul>
+          <li>Update auf react 18/19</li>
+          <li>Update auf Spring Boot 3</li>
+          <li>Update auf Keycloak 26 (ongoing…)</li>
+          <li>Auto-Updates der Images</li>
+          <li>Allgemein Automatisierung, z.B. Projekt-Init Skript und wiederverwertbare Pipelines</li>
+          <li>Helm Charts, https://github.com/terrestris/helm-charts</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Neuerungen (aus Sicht der Anwendenden)</h3>
+        <ul>
+          <li>Harmonisierung der Suche (WFS und Solr)</li>
+          <li>Überarbeitung der Dokumentation (Docusaurus)</li>
+          <li>Mapbox-Style Support</li>
+          <li>Auto-Sync mit Keycloak Usern/Gruppen; manuell auch</li>
+          <li>Template Konfigurationen (?)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Roadmap 2025/2026</h3>
+        <ul>
+          <li>Pluginrepository?</li>
+          <li>OGC API Support erweitern</li>
+          <li>Integration von Dashboards</li>
+          <li>Accessibility für GIS-Client via map11y</li>
+          <li>Historisierung im Admin</li>
+        </ul>
+      </section>
     </div>
   </div>
 
