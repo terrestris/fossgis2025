@@ -74,17 +74,40 @@
       overflow: hidden !important;
     }
 
-    .reveal section a.email {
+    .reveal section a.email:before {
       background-image: url("../img/mail-logo.png");
-      background-position: left 0.55em;
+      background-size: 25px 25px;
+      background-repeat: no-repeat;
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      padding-right: 5px;
+      vertical-align: middle;
+      content: " ";
     }
 
-    .reveal section a.github {
+    .reveal section a.github:before {
       background-image: url("../img/github-logo.png");
+      background-size: 25px 25px;
+      background-repeat: no-repeat;
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      padding-right: 5px;
+      vertical-align: middle;
+      content: " ";
     }
 
-    .reveal section a.url {
+    .reveal section a.url:before {
       background-image: url("../img/url-logo.png");
+      background-size: 25px 25px;
+      background-repeat: no-repeat;
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      padding-right: 5px;
+      vertical-align: middle;
+      content: " ";
     }
 
     .empty-box-content {
@@ -231,7 +254,12 @@
       <section>
         <h2>Fragen?</h2>
         <div class="slide-content-default" style="justify-content: center;">
-          <h4>Kommt gerne auch zu uns an den Stand!</h4>
+          <h3>Kommt gerne auch zu uns an den Stand!</h3>
+          <div style="padding-top: 1em;">
+            <h4>Oder kontaktiert uns jederzeit direkt:</h4>
+            <h4><a href="mailto:buehner@terrestris.de" class="email">buehner@terrestris.de</a></h4>
+            <h4><a href="mailto:koch@terrestris.de" class="email">koch@terrestris.de</a></h4>
+          </div>
         </div>
         <footer>
           <img src="../img/geoserver-cloud/gs.svg" height="30px" />
