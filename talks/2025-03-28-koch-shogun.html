@@ -2,165 +2,318 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="../img/shogun/favicon.ico">
 
   <title>State of SHOGun: Ein flexibles Web-GIS Framework</title>
 
+  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="../reveal.js/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js/dist/theme/simple.css">
 
   <style type="text/css" media="screen">
-    .slides section.has-dark-background,
-    .slides section.has-dark-background h3 {
-      color: #fff;
+    section {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      top: unset !important;
+      height: 100%;
     }
 
-    .slides section.has-light-background,
-    .slides section.has-light-background h3 {
-      color: #222;
+    .slide-content-default {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
     }
 
     .image-shadow {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       background: transparent;
     }
+
+    footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: small;
+    }
+
+    footer img {
+      margin: 0 !important;
+    }
+
+    .blurry-banner {
+      width: 100%;
+      backdrop-filter: blur(8px) grayscale(100%);
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 40px;
+    }
+
+    .reveal section a.email:before {
+      background-image: url("../img/mail-logo.png");
+      background-size: 0.8em 0.8em;
+      background-repeat: no-repeat;
+      width: 0.8em;
+      height: 0.8em;
+      display: inline-block;
+      padding-right: 5px;
+      vertical-align: bottom;
+      content: " ";
+    }
+
+    .reveal section a.github:before {
+      background-image: url("../img/github-logo.png");
+      background-size: 0.8em 0.8em;
+      background-repeat: no-repeat;
+      width: 0.8em;
+      height: 0.8em;
+      display: inline-block;
+      padding-right: 5px;
+      vertical-align: middle;
+      content: " ";
+    }
+
+    .reveal section a.url:before {
+      background-image: url("../img/url-logo.png");
+      background-size: 0.8em 0.8em;
+      background-repeat: no-repeat;
+      width: 0.8em;
+      height: 0.8em;
+      display: inline-block;
+      padding-right: 5px;
+      vertical-align: middle;
+      content: " ";
+    }
   </style>
 </head>
+
+<!--
+TODOS:
+
+- Screenshot Admin?
+- Neuerungen anders sortieren?
+
+-->
 
 <body>
   <div class="reveal">
     <div class="slides">
 
-      <section>
-        <a href="https://github.com/terrestris/shogun">
-          <img src="../img/2025-03-28-koch-shogun/shogun-logo.svg" alt="SHOGun logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
-        </a>
-        <h3>State of SHOGun</h3>
-        <h5>Ein flexibles Web-GIS Framework</h5>
-        <p>
-          <small>Daniel Koch <a href="mailto:koch@terrestris.de">koch@terrestris.de</a> und <a href="https://github.com/terrestris/shogun/graphs/contributors">contributors</a></small>
-        </p>
+      <section id="title" data-background-image="/img/shogun/logos/shogun.svg" data-background-size="auto 75%">
+        <div class="fragment slide-content-default blurry-banner" style="justify-content: center; padding: 0;">
+          <h1>State of SHOGun</h1>
+          <h3>Ein flexibles Web-GIS Framework</h3>
+          <p>
+            <small>Daniel Koch <a href="mailto:koch@terrestris.de">koch@terrestris.de</a> und <a href="https://github.com/terrestris/shogun/graphs/contributors">contributors</a></small>
+          </p>
+          <small>FOSSGIS 2025, Münster</small>
+        </div>
       </section>
 
       <section>
-        <h3>Was ist SHOGun?</h3>
-        <ul>
-          <li>WebGIS Framework</li>
-          <li>off-the-shelf vs. Individualisierung</li>
-        </ul>
+        <h2>Was ist SHOGun?</h2>
+        <div class="slide-content-default">
+          <div class="slide-content-horizontal" style="gap: 20px;">
+            <div style="flex: 1;">
+              <div>
+                <span>WebGIS Framework</span><br />
+                <small>u.a. konfigurierbare Kartenclients, Anzeige von Geodaten aus diversen Quellen</small><br />
+              </div>
+              <div>
+                <span>Umfangreiches Berechtigungssystem</span><br />
+                <small>auf Basis von <a href="https://www.keycloak.org/" class="url">Keycloak</a></small><br />
+              </div>
+              <div>
+                <span>Maßgebliche Designidee: Erweiterbarkeit</span><br />
+                <small>zwischen off-the-shelf Produkt und Individuallösung</small><br />
+              </div>
+              <div>
+                <span>Skalierbare Microservice-Architektur</span><br />
+                <small>Anpassung an Projektumgebung</small><br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/shogun/logos/shogun.svg" height="30px" />
+          <span>State of SHOGun, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
       </section>
 
       <section>
-        <h3>Kernfunktionen</h3>
-        <ul>
-          <li>skalierbare verteilte Architektur</li>
-          <li>etablierte OS Komponenten (PostGIS, GeoServer, GeoStyler)</li>
-          <li>Maßgebliche Designidee: Erweiterbarkeit</li>
-          <li>Umfangreiches Berechtigungssystem (via Keycloak)</li>
-        </ul>
+        <h2>Übersicht der Komponenten</h2>
+        <div class="slide-content-default">
+          <img
+            src="../img/shogun/overview.png"
+            alt="SHOGun Komponentenübersicht"
+            style="height: 600px; margin: 0 auto 4rem auto;"
+          >
+        </div>
+        <footer>
+          <img src="../img/shogun/logos/shogun.svg" height="30px" />
+          <span>State of SHOGun, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
       </section>
 
       <section>
-        <h3>Projektbeispiele</h3>
+        <h2>Projektbeispiele</h2>
+        <div class="slide-content-default r-stack">
+          <img
+            class="image-shadow"
+            src="../img/shogun/project-examples/shogun-demo.png"
+            height="800"
+          >
+          <img
+            class="fragment current-visible image-shadow"
+            src="../img/shogun/project-examples/shogun-edit.png"
+            height="800"
+          >
+          <img
+            class="fragment current-visible image-shadow"
+            src="../img/shogun/project-examples/ikso.png"
+            height="800"
+          >
+          <img
+            class="fragment current-visible image-shadow"
+            src="../img/shogun/project-examples/khr.png"
+            height="800"
+          >
+          <img
+            class="fragment current-visible image-shadow"
+            src="../img/shogun/project-examples/no-header.png"
+            height="800"
+          >
+          <img
+            class="fragment current-visible image-shadow"
+            src="../img/shogun/project-examples/regiofreizeit.png"
+            height="800"
+          >
+        </div>
+        <footer>
+          <img src="../img/shogun/logos/shogun.svg" height="30px" />
+          <span>State of SHOGun, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
       </section>
 
       <section>
-        <figure>
-          <figcaption>Preview with default settings:</figcaption>
-          <img height="50" src="https://static.slid.es/images/alphabet/v1/a.png" data-preview-image>
-        </figure>
+        <h2>Neuerungen I</h2>
+        <div class="slide-content-default">
+          <div class="slide-content-horizontal" style="gap: 20px;">
+            <div style="flex: 1;">
+              <div>
+                <span>Diverse umfangreiche Dependency Updates </span><br />
+                <div style="display: inline;">
+                  <small>React 17 -> 18/19</small><br />
+                  <small>Spring Boot 2 -> 3</small><br />
+                  <small>Keycloak 25 -> 26 (WIP…)</small><br />
+                </div>
+              </div>
+              <div>
+                <span>Überarbeitung und Erweiterung der Helm Charts</span><br />
+                <small>Vergleiche <a href="https://github.com/terrestris/helm-charts" class="github">Repository</a></small><br />
+              </div>
+              <div>
+                <span>Automatisierung</span><br />
+                <small>wiederverwertbare Pipelinekonfigurationen, Tool zur Projekt-Initialisierung, Auto-Updates der Docker-Images</small><br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/shogun/logos/shogun.svg" height="30px" />
+          <span>State of SHOGun, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
       </section>
 
       <section>
-        <img
-          src="/img/2025-03-28-koch-shogun/ikso.png"
-          alt="SHOGun logo"
-          style="height: 600px; margin: 0 auto 4rem auto;"
-          class="image-shadow"
-        >
+        <h2>Neuerungen II</h2>
+        <div class="slide-content-default">
+          <div class="slide-content-horizontal" style="gap: 20px;">
+            <div style="flex: 1;">
+              <div>
+                <span>Harmonisierung des Such-Interfaces</span><br />
+                <small>Einheitliche UI für alle Suchengines (WFS und Solr)</small><br />
+              </div>
+              <div>
+                <span>Überarbeitung und Erweiterung der Dokumentation</span><br />
+                <small>Vergleiche <a href="https://github.com/terrestris/shogun-docs" class="github">Repository</a></small><br />
+              </div>
+              <div>
+                <span>Mapbox-Style Support</span><br />
+                <small>Integration der Map eines Mapbox-Style Dokuments</small><br />
+              </div>
+              <div>
+                <span>Vereinfachung von wiederkehrenden Operationen</span><br />
+                <small>u.a. Auto-Sync mit Keycloak Usern/Gruppen, Konfigurations-Template</small><br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/shogun/logos/shogun.svg" height="30px" />
+          <span>State of SHOGun, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
       </section>
 
       <section>
-        <img
-          src="/img/2025-03-28-koch-shogun/khr.png"
-          alt="IKSO"
-          style="height: 600px; margin: 0 auto 4rem auto;"
-          class="image-shadow"
-        >
+        <h2>Roadmap 2025</h2>
+        <div class="slide-content-default">
+          <div class="slide-content-horizontal" style="gap: 20px;">
+            <div style="flex: 1;">
+              <div>
+                <span>Erweiterung des Supports der OGC API</span><br />
+                <small>u.a. TODO</small><br />
+              </div>
+              <div style="flex: 1;">
+                <span>Integration von Dashboards</span><br />
+                <small>Einbindung über <a href="https://superset.apache.org/" class="url">Apache Superset</a></small><br />
+              </div>
+              <div style="flex: 1;">
+                <span>Accessibility des GIS-Client erhöhen</span><br />
+                <small>Fokus auf Bedienung der Karte via <a href="https://github.com/terrestris/mapa11y" class="github">mapa11y</a></small>
+              </div>
+              <div style="flex: 1;">
+                <span>Einfache Navigation durch Konfigurations-Historie</span><br />
+                <small>Darstellung und Wiederherstellung über den Admin</small>
+              </div>
+              <div style="flex: 1;">
+                <span>Integrierte Volltextsuche</span><br />
+                <small>Anbindung von <a href="https://hibernate.org/search/" class="url">Hibernate Search</a></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/shogun/logos/shogun.svg" height="30px" />
+          <span>State of SHOGun, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
       </section>
 
       <section>
-        TODO screenshot Admin?
+        <h2>Fragen?</h2>
+        <div class="slide-content-default" style="justify-content: center;">
+          <h3>Kommt gerne auch zu uns an den Stand!</h3>
+          <div style="padding-top: 1em;">
+            <h4>Oder kontaktiert uns jederzeit direkt:</h4>
+            <h4><a href="mailto:koch@terrestris.de" class="email">koch@terrestris.de</a></h4>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/shogun/logos/shogun.svg" height="30px" />
+          <span>State of SHOGun, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
       </section>
 
-      <section>
-        <img
-          src="/img/2025-03-28-koch-shogun/numerare.png"
-          alt="Numerare"
-          style="height: 600px; margin: 0 auto 4rem auto;"
-          class="image-shadow"
-        >
-      </section>
-
-      <section>
-        <img
-          src="/img/2025-03-28-koch-shogun/regiofreizeit.png"
-          alt="Regiofreizeit"
-          style="height: 600px; margin: 0 auto 4rem auto;"
-          class="image-shadow"
-        >
-      </section>
-
-      <section>
-        <img
-          src="/img/2025-03-28-koch-shogun/shogun-demo.png"
-          alt="SHOGun Demo"
-          style="height: 600px; margin: 0 auto 4rem auto;"
-          class="image-shadow"
-        >
-      </section>
-
-      <section>
-        <img
-          src="/img/2025-03-28-koch-shogun/shogun-edit.png"
-          alt="SHOGun Demo II"
-          style="height: 600px; margin: 0 auto 4rem auto;"
-          class="image-shadow"
-        >
-      </section>
-
-      <section>
-        <h3>Neuerungen (aus technischer Sicht)</h3>
-        <ul>
-          <li>Update auf react 18/19</li>
-          <li>Update auf Spring Boot 3</li>
-          <li>Update auf Keycloak 26 (ongoing…)</li>
-          <li>Auto-Updates der Images</li>
-          <li>Allgemein Automatisierung, z.B. Projekt-Init Skript und wiederverwertbare Pipelines</li>
-          <li>Helm Charts, https://github.com/terrestris/helm-charts</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Neuerungen (aus Sicht der Anwendenden)</h3>
-        <ul>
-          <li>Harmonisierung der Suche (WFS und Solr)</li>
-          <li>Überarbeitung der Dokumentation (Docusaurus)</li>
-          <li>Mapbox-Style Support</li>
-          <li>Auto-Sync mit Keycloak Usern/Gruppen; manuell auch</li>
-          <li>Template Konfigurationen (?)</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Roadmap 2025/2026</h3>
-        <ul>
-          <li>Pluginrepository?</li>
-          <li>OGC API Support erweitern</li>
-          <li>Integration von Dashboards</li>
-          <li>Accessibility für GIS-Client via map11y</li>
-          <li>Historisierung im Admin</li>
-        </ul>
-      </section>
     </div>
   </div>
 
@@ -171,6 +324,8 @@
   <script src="../reveal.js/plugin/search/search.js"></script>
   <script>
     Reveal.initialize({
+      width: '100%',
+      height: '100%',
       center: true,
       history: true,
       controls: true,
