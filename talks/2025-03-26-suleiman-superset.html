@@ -1,0 +1,498 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="../img/terrestris.svg">
+
+  <title>Superset - Business Intelligence meets Cartography</title>
+
+  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/dist/theme/simple.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+  <style>
+    section {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      top: unset !important;
+      height: 100%;
+    }
+
+    .slide-header {}
+
+    .slide-content-default {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .slide-content-horizontal {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: small;
+    }
+
+    footer img {
+      margin: 0 !important;
+    }
+
+    blockquote {
+      box-shadow: unset !important;
+    }
+
+    .blurry-banner {
+      width: 100%;
+      backdrop-filter: blur(8px) grayscale(100%);
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+    }
+
+    .gap {
+      gap: 100px;
+    }
+
+    .r-stack img {
+      max-height: 850px;
+    }
+
+    .img-shadow {
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .code-small>code {
+      overflow: hidden !important;
+    }
+
+    .reveal section a.email {
+      background-image: url("../img/mail-logo.png");
+      background-position: left 0.55em;
+    }
+
+    .reveal section a.github {
+      background-image: url("../img/github-logo.png");
+    }
+
+    .reveal section a.url {
+      background-image: url("../img/url-logo.png");
+    }
+
+    .question-box {
+      background-color: #66c2a5;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section id="title" data-background-image="../img/superset/superset-logo.svg">
+        <div class="fragment slide-content-default" style="justify-content: center; padding: 0;">
+          <div class="blurry-banner">
+            <h2>Superset <br /> - <br /> Business Intelligence meets Cartography</h2>
+            <p>
+              <small>Jan Suleiman, terrestris GmbH &amp; Co. KG</small> <br />
+              <small>FOSSGIS 2025, Münster</small>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="slide-content-default" style="justify-content: center;">
+          <h2>Jan Suleiman</h2>
+          <div class="slide-content-horizontal gap" style="flex: unset; justify-content: center; align-items: start;">
+            <div>
+              <img src="../img/js.jpeg" class="plain" width="200" /><br />
+              <small>
+                <a class="email" href="mailto:suleiman@terrestris.de">suleiman@terrestris.de</a><br />
+                <a class="github" href="https://github.com/jansule/">@jansule</a><br />
+              </small><br />
+            </div>
+            <ul>
+              <li>M.Sc. Geoinformatics</li>
+              <li>Full-Stack Developer<br />@terrestris, Bonn</li>
+              <li>GeoStyler Core Developer</li>
+              <li>OSGeo Charter Member</li>
+              <li>Superset Plugin Developer</li>
+            </ul>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Inhalt</h2>
+        <div class="slide-content-default gap" style="justify-content: center">
+          <ol>
+            <li>Grundlagen: Thematische Karten</li>
+            <li>Thematische Karten in Superset</li>
+            <li>Stand der Entwicklungen</li>
+            <li>Ausblick</li>
+          </ol>
+          <small>Link zu den Folien:<br /><a
+              href="https://terrestris.github.io/fossgis2025/talks/2025-03-26-suleiman-superset.html">terrestris.github.io/fossgis2025/talks/2025-03-26-suleiman-superset.html</a></small>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Grundlagen: Thematische Karten</h2>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal">
+            <div>
+              <ul>
+                <li>Darstellung sachbezogener Daten</li>
+                <li>räumliche Komponente</li>
+                <li>zeitliche Komponente</li>
+                <li>Analyse raum-zeitlicher Muster</li>
+              </ul>
+            </div>
+            <div>
+              <img src="../img/superset/thematic-maps.png" height="800px" />
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Grundlagen: Thematische Karten</h2>
+        <h4>Choroplethen Karten</h4>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal">
+            <div>
+              <ul>
+                <li>Färbung der Flächen</li>
+                <li>Kategorisiert</li>
+                <li>Beispiele:
+                  <ul>
+                    <li>Bevölkerungsentwicklung</li>
+                    <li>Covid-Inzidenzen</li>
+                    <li>Feinstaubbelastung</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <img src="../img/superset/choropleth-example.png" height="600px" />
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Grundlagen: Thematische Karten</h2>
+        <h4>Kartodiagramme</h4>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal">
+            <div>
+              <ul>
+                <li>Verortung von Diagrammen</li>
+                <li>i.d.R. absolute Werte</li>
+                <li>Beispiele:
+                  <ul>
+                    <li>Wahlergebnisse</li>
+                    <li>Luftqualität</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <img src="../img/superset/cartodiagram-example.png" height="600px" />
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Grundlagen: Thematische Karten</h2>
+        <h4>Proportional Symbol Maps</h4>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal">
+            <div>
+              <ul>
+                <li>Größe proportional zu Messwert</li>
+                <li>i.d.R. absolute Werte</li>
+                <li>Kategorisierung möglich</li>
+                <li>Beispiele:
+                  <ul>
+                    <li>Bevölkerungszahlen</li>
+                    <li>Produzierendes Gewerbe</li>
+                    <li>Feinstaubbelastung</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <img src="../img/superset/proportional-symbol-example.png" height="500px" />
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Thematische Karten in Superset</h2>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal">
+            <div style="display: flex; flex-direction: column; gap: 150px;">
+              <ul>
+                <li>i.d.R. Analyse zeitlicher Muster</li>
+                <li>Oftmals auch räumliche Komponente</li>
+                <li>Datenaktualität</li>
+                <li>Interaktivität</li>
+                <li>Flexibilität</li>
+              </ul>
+              <small>Siehe auch <a
+                  href="https://media.ccc.de/v/fossgis2024-38811-interaktive-dashboards-zur-optimierung-von-intelligence-prozessen">FOSSGIS
+                  2024 Talk</a></small>
+            </div>
+            <div>
+              <img src="../img/superset/dashboard.png" height="500px" />
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Thematische Karten in Superset</h2>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal">
+            <iframe data-src="http://localhost:8088/superset/dashboard/p/1daGvao5Wpo/" data-preload width="100%"
+              height="100%"></iframe>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Thematische Karten in Superset</h2>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal">
+            <iframe data-src="http://localhost:8088/superset/dashboard/p/YdDGqQyG4AE/" data-preload width="100%"
+              height="100%"></iframe>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Thematische Karten in Superset</h2>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal">
+            <iframe data-src="http://localhost:8088/superset/dashboard/p/jarXJOP9OQP/" data-preload width="100%"
+              height="100%"></iframe>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Stand der Entwicklungen</h2>
+        <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+          <div class="slide-content-horizontal">
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start;">
+                Cartodiagram Plugin
+                <ul>
+                  <li>PR gemerged</li>
+                  <li>Superset Version 5</li>
+                  <li>Release geplant in 2025</li>
+                </ul>
+              </div>
+              <div>
+                <img src="../img/superset/cartodiagram-example.png" height="300px" />
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start;">
+                Thematic Map Plugin
+                <ul>
+                  <li>Aktuell interne Entwicklung</li>
+                  <li>Im Feinschliff</li>
+                  <li>PR geplant</li>
+                </ul>
+              </div>
+              <div>
+                <img src="../img/superset/proportional-symbol-example.png" height="300px" />
+                <img src="../img/superset/choropleth-example.png" height="300px" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Ausblick</h2>
+        <div class="slide-content-default">
+          <ul>
+            <li>Einbindung von OGC Datenquellen (WFS, Sensorthings)</li>
+            <li>Cross-Filter für Kartenplugins</li>
+            <li>Metriken für Thematic Map Plugin</li>
+            <li>Plugin-First Architektur (<a href="https://github.com/apache/superset/issues/31932">SIP 151</a>)</li>
+          </ul>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2>Imprint</h2>
+        <div class="slide-content">
+          <h4>Autor</h4>
+          <div class="slide-content-horizontal" style="flex: unset">
+            <address style="text-align: left">
+              <strong>Jan Suleiman</strong><br />
+              <span style="font-size: smaller;">
+                terrestris GmbH &amp; Co. KG<br />
+                K&ouml;lnstr. 99, 53111 Bonn<br />
+                suleiman@terrestris.de
+              </span>
+            </address>
+            </address>
+          </div>
+        </div>
+        <div class="slide-content" style="flex: unset">
+          <h4 style="clear:both;">Lizenz</h4>
+          <p id="license">
+            <small>
+              Die Folien sind unter der <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+              Lizenz veröffentlicht.<br />
+              <a
+                href="https://terrestris.github.io/fossgis2025/talks/2025-03-26-suleiman-superset.html">terrestris.github.io/fossgis2025/talks/2025-03-26-suleiman-superset.html</a>
+            </small>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="slide-content-default">
+          <h2 class="slide-header">Fragen?</h2>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+      <section>
+        <h2 class="slide-header">Integration</h2>
+        <div class="slide-content-default">
+          <div class="slide-content-horizontal" style="gap: 100px;">
+            <div>
+              <span>Superset einfach in<br />bestehende Systeme integrieren</span>
+            </div>
+            <div>
+              <ul>
+                <li>Digitale Zwillinge</li>
+                <li>Urban Dataspace Platform / CIVITAS Core</li>
+                <li>Montoring Masterportal Datenerfassung</li>
+                <li>Beliebige andere GDIs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <img src="../img/terrestris.svg" height="30px" />
+          <span>Superset - Business Intelligence meets Cartography, FOSSGIS 2025, Münster</span>
+          <div></div>
+        </footer>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../reveal.js/dist/reveal.js"></script>
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="../reveal.js/plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      width: '100%',
+      height: '100%',
+      hash: true,
+      controlsTutorial: false,
+      transition: 'fade',
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+
+</html>
