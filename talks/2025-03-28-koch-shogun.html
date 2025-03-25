@@ -90,14 +90,6 @@
   </style>
 </head>
 
-<!--
-TODOS:
-
-- Screenshot Admin?
-- Neuerungen anders sortieren?
-
--->
-
 <body>
   <div class="reveal">
     <div class="slides">
@@ -107,7 +99,7 @@ TODOS:
           <h1>State of SHOGun</h1>
           <h3>Ein flexibles Web-GIS Framework</h3>
           <p>
-            <small>Daniel Koch <a href="mailto:koch@terrestris.de">koch@terrestris.de</a> und <a href="https://github.com/terrestris/shogun/graphs/contributors">contributors</a></small>
+            <small>Daniel Koch <a href="mailto:koch@terrestris.de">koch@terrestris.de</a> und <a href="https://github.com/terrestris/shogun/graphs/contributors">Contributors</a></small>
           </p>
           <small>FOSSGIS 2025, Münster</small>
         </div>
@@ -128,11 +120,11 @@ TODOS:
               </div>
               <div>
                 <span>Maßgebliche Designidee: Erweiterbarkeit</span><br />
-                <small>zwischen off-the-shelf Produkt und Individuallösung</small><br />
+                <small>zwischen "off-the-shelf" Produkt und Individuallösung</small><br />
               </div>
               <div>
                 <span>Skalierbare Microservice-Architektur</span><br />
-                <small>Anpassung an Projektumgebung</small><br />
+                <small>anpassbar an spezifische Projektumgebungen</small><br />
               </div>
             </div>
           </div>
@@ -162,7 +154,7 @@ TODOS:
 
       <section>
         <h2>Projektbeispiele</h2>
-        <div class="slide-content-default r-stack">
+        <div class="r-stack">
           <img
             class="image-shadow"
             src="../img/shogun/project-examples/shogun-demo.png"
@@ -175,22 +167,17 @@ TODOS:
           >
           <img
             class="fragment current-visible image-shadow"
+            src="../img/shogun/project-examples/regiofreizeit.png"
+            height="800"
+          >
+          <img
+            class="fragment current-visible image-shadow"
             src="../img/shogun/project-examples/ikso.png"
             height="800"
           >
           <img
             class="fragment current-visible image-shadow"
-            src="../img/shogun/project-examples/khr.png"
-            height="800"
-          >
-          <img
-            class="fragment current-visible image-shadow"
             src="../img/shogun/project-examples/no-header.png"
-            height="800"
-          >
-          <img
-            class="fragment current-visible image-shadow"
-            src="../img/shogun/project-examples/regiofreizeit.png"
             height="800"
           >
         </div>
@@ -209,6 +196,7 @@ TODOS:
               <div>
                 <span>Diverse umfangreiche Dependency Updates </span><br />
                 <div style="display: inline;">
+                  <small>webpack -> rspack</small><br />
                   <small>React 17 -> 18/19</small><br />
                   <small>Spring Boot 2 -> 3</small><br />
                   <small>Keycloak 25 -> 26 (WIP…)</small><br />
