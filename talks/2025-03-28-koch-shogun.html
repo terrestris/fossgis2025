@@ -109,23 +109,21 @@
         <h2>Was ist SHOGun?</h2>
         <div class="slide-content-default">
           <div class="slide-content-horizontal" style="gap: 20px;">
-            <div style="flex: 1;">
-              <div>
-                <span>WebGIS Framework</span><br />
-                <small>u.a. konfigurierbare Kartenclients, Anzeige von Geodaten aus diversen Quellen</small><br />
-              </div>
-              <div>
-                <span>Umfangreiches Berechtigungssystem</span><br />
-                <small>auf Basis von <a href="https://www.keycloak.org/" class="url">Keycloak</a></small><br />
-              </div>
-              <div>
-                <span>Maßgebliche Designidee: Erweiterbarkeit</span><br />
-                <small>zwischen "off-the-shelf" Produkt und Individuallösung</small><br />
-              </div>
-              <div>
-                <span>Skalierbare Microservice-Architektur</span><br />
-                <small>anpassbar an spezifische Projektumgebungen</small><br />
-              </div>
+            <div>
+              <span>WebGIS Framework</span><br />
+              <small>konfigurierbare Kartenclients, Anzeige von Geodaten aus diversen Quellen, …</small><br />
+            </div>
+            <div>
+              <span>Umfangreiches Berechtigungssystem</span><br />
+              <small>Auf Basis von <a href="https://www.keycloak.org/" class="url">Keycloak</a></small><br />
+            </div>
+            <div>
+              <span>Maßgebliche Designidee: Erweiterbarkeit</span><br />
+              <small>Zwischen "off-the-shelf" Produkt und Individuallösung</small><br />
+            </div>
+            <div>
+              <span>Skalierbare Microservice-Architektur</span><br />
+              <small>Anpassbar an spezifische Projektumgebungen</small><br />
             </div>
           </div>
         </div>
@@ -138,11 +136,11 @@
 
       <section>
         <h2>Übersicht der Komponenten</h2>
-        <div class="slide-content-default">
+        <div style="height: 75%">
           <img
             src="../img/shogun/overview.png"
             alt="SHOGun Komponentenübersicht"
-            style="height: 600px; margin: 0 auto 4rem auto;"
+            style="object-fit: contain;"
           >
         </div>
         <footer>
@@ -154,31 +152,31 @@
 
       <section>
         <h2>Projektbeispiele</h2>
-        <div class="r-stack">
+        <div class="r-stack" style="height: 75%">
           <img
             class="image-shadow"
             src="../img/shogun/project-examples/shogun-demo.png"
-            height="800"
+            style="object-fit: contain;"
           >
           <img
-            class="fragment current-visible image-shadow"
+            class="fragment"
             src="../img/shogun/project-examples/shogun-edit.png"
-            height="800"
+            style="object-fit: contain;"
           >
           <img
-            class="fragment current-visible image-shadow"
+            class="fragment"
             src="../img/shogun/project-examples/regiofreizeit.png"
-            height="800"
+            style="object-fit: contain;"
           >
           <img
-            class="fragment current-visible image-shadow"
+            class="fragment"
             src="../img/shogun/project-examples/ikso.png"
-            height="800"
+            style="object-fit: contain;"
           >
           <img
-            class="fragment current-visible image-shadow"
+            class="fragment"
             src="../img/shogun/project-examples/no-header.png"
-            height="800"
+            style="object-fit: contain;"
           >
         </div>
         <footer>
@@ -192,23 +190,25 @@
         <h2>Neuerungen I</h2>
         <div class="slide-content-default">
           <div class="slide-content-horizontal" style="gap: 20px;">
-            <div style="flex: 1;">
-              <div>
-                <span>Diverse umfangreiche Dependency Updates </span><br />
-                <div style="display: inline;">
-                  <small>webpack -> rspack</small><br />
-                  <small>React 17 -> 18/19</small><br />
-                  <small>Spring Boot 2 -> 3</small><br />
-                  <small>Keycloak 25 -> 26 (WIP…)</small><br />
-                </div>
+            <div>
+              <span>Umfangreiche Dependency Updates </span><br />
+              <div style="display: inline;">
+                <small>webpack &rarr; rspack</small><br />
+                <small>React 17 &rarr; 18/19</small><br />
+                <small>Spring Boot 2 &rarr; 3</small><br />
+                <small>Keycloak 25 &rarr; 26 <i>(WIP…)</i></small><br />
               </div>
-              <div>
-                <span>Überarbeitung und Erweiterung der Helm Charts</span><br />
-                <small>Vergleiche <a href="https://github.com/terrestris/helm-charts" class="github">Repository</a></small><br />
-              </div>
-              <div>
-                <span>Automatisierung</span><br />
-                <small>wiederverwertbare Pipelinekonfigurationen, Tool zur Projekt-Initialisierung, Auto-Updates der Docker-Images</small><br />
+            </div>
+            <div>
+              <span>Überarbeitung und Erweiterung der Helm Charts</span><br />
+              <small>Vergleiche <a href="https://github.com/terrestris/helm-charts" class="github">Repository</a></small><br />
+            </div>
+            <div>
+              <span>Automatisierung</span><br />
+              <div style="display: inline;">
+                <small>Wiederverwertbare Pipelinekonfigurationen</small><br />
+                <small>Tool zur Projekt-Initialisierung</small><br />
+                <small>Automatische Updates der Docker-Images</small><br />
               </div>
             </div>
           </div>
@@ -224,23 +224,21 @@
         <h2>Neuerungen II</h2>
         <div class="slide-content-default">
           <div class="slide-content-horizontal" style="gap: 20px;">
-            <div style="flex: 1;">
-              <div>
-                <span>Harmonisierung des Such-Interfaces</span><br />
-                <small>Einheitliche UI für alle Suchengines (WFS und Solr)</small><br />
-              </div>
-              <div>
-                <span>Überarbeitung und Erweiterung der Dokumentation</span><br />
-                <small>Vergleiche <a href="https://github.com/terrestris/shogun-docs" class="github">Repository</a></small><br />
-              </div>
-              <div>
-                <span>Mapbox-Style Support</span><br />
-                <small>Integration der Map eines Mapbox-Style Dokuments</small><br />
-              </div>
-              <div>
-                <span>Vereinfachung von wiederkehrenden Operationen</span><br />
-                <small>u.a. Auto-Sync mit Keycloak Usern/Gruppen, Konfigurations-Template</small><br />
-              </div>
+            <div>
+              <span>Harmonisierung des Such-Interfaces</span><br />
+              <small>Einheitliche UI für alle Suchengines (WFS und Solr)</small><br />
+            </div>
+            <div>
+              <span>Überarbeitung und Erweiterung der Dokumentation</span><br />
+              <small>Vergleiche <a href="https://github.com/terrestris/shogun-docs" class="github">Repository</a></small><br />
+            </div>
+            <div>
+              <span>Mapbox-Style Support</span><br />
+              <small>Integration der Map eines Mapbox-Style Dokuments</small><br />
+            </div>
+            <div>
+              <span>Vereinfachung von wiederkehrenden Operationen</span><br />
+              <small>Auto-Sync mit Keycloak Usern/Gruppen, Konfigurations-Template, …</small><br />
             </div>
           </div>
         </div>
@@ -255,27 +253,21 @@
         <h2>Roadmap 2025</h2>
         <div class="slide-content-default">
           <div class="slide-content-horizontal" style="gap: 20px;">
-            <div style="flex: 1;">
-              <div>
-                <span>Erweiterung des Supports der OGC API</span><br />
-                <small>u.a. TODO</small><br />
-              </div>
-              <div style="flex: 1;">
-                <span>Integration von Dashboards</span><br />
-                <small>Einbindung über <a href="https://superset.apache.org/" class="url">Apache Superset</a></small><br />
-              </div>
-              <div style="flex: 1;">
-                <span>Accessibility des GIS-Client erhöhen</span><br />
-                <small>Fokus auf Bedienung der Karte via <a href="https://github.com/terrestris/mapa11y" class="github">mapa11y</a></small>
-              </div>
-              <div style="flex: 1;">
-                <span>Einfache Navigation durch Konfigurations-Historie</span><br />
-                <small>Darstellung und Wiederherstellung über den Admin</small>
-              </div>
-              <div style="flex: 1;">
-                <span>Integrierte Volltextsuche</span><br />
-                <small>Anbindung von <a href="https://hibernate.org/search/" class="url">Hibernate Search</a></small>
-              </div>
+            <div>
+              <span>Integration von Dashboards</span><br />
+              <small>Einbindung über <a href="https://superset.apache.org/" class="url">Apache Superset</a></small><br />
+            </div>
+            <div>
+              <span>Accessibility des GIS-Client erhöhen</span><br />
+              <small>Fokus auf Bedienung der Karte via <a href="https://github.com/terrestris/mapa11y" class="github">mapa11y</a></small>
+            </div>
+            <div>
+              <span>Einfache Navigation durch Konfigurations-Historie</span><br />
+              <small>Darstellung und Wiederherstellung über den Admin</small>
+            </div>
+            <div>
+              <span>Integrierte Volltextsuche</span><br />
+              <small>Anbindung von <a href="https://hibernate.org/search/" class="url">Hibernate Search</a></small>
             </div>
           </div>
         </div>
